@@ -1,0 +1,22 @@
+
+#internalLink {
+    font-size: 30px;
+    color: green;
+}
+
+#linkedInButton {
+    width: 200px;
+    height: 50px;
+
+    color: crimson;
+}
+
+#hiddenText {
+    font-size: 30px;
+    color: darkblue;
+}
+
+img {
+    width:auto;
+    max-width: 100%;
+}
