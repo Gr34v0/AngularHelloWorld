@@ -25,5 +25,6 @@ img {
 }
 
 #body-text {
-    padding-left: inherit;
+    margin-left: 10%;
+    margin-right: 10%;
 }
