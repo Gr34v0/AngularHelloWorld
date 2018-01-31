@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Resume</title>
+        <link rel="stylesheet" href="site-wide.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="landing.js"></script>
+    </head>
+
+    <div id="nav-placeholder">
+        <script>
+            $.get("navigation.html", function(data){
+                $("#nav-placeholder").replaceWith(data);
+            });
+        </script>
+    </div>
+
+    <div id="body-text">
+        <body>
+            Placeholder Body
+        </body>
+    </div>
+</html>

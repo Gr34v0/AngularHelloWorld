@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<title>About</title>
+		<link rel="stylesheet" href="site-wide.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="//code.jquery.com/jquery.min.js"></script>
+		<script src="landing.js"></script>
+	</head>
+
+	<div id="nav-placeholder">
+		<script>
+            $.get("navigation.html", function(data){
+                $("#nav-placeholder").replaceWith(data);
+            });
+		</script>
+	</div>
+
+	<div id="body-text">
+		<body>
+		<p>
+			I have very little experience in web technology. Over both of my COOPs I was tasked with nearly exclusively
+			backend development, but I was briefly exposed to HTML/CSS/JS in my first, and I developed a REST API and
+			utilized said API on my second. I wish to learn as much as I can about web development as I can so that I am
+			no longer in the dark about the subject.
+		</p>
+		<p>
+			Star Trek is one of my favorite things, and thus I thought it would be appropriate to add a picture of the
+			latest iteration of Star Trek as my "favorite thing" image.
+		</p>
+		<img src="resources/DiscoveryImage.jpg">
+		</body>
+	</div>
+</html>

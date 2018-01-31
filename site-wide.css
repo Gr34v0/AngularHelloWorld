@@ -1,10 +1,15 @@
 
-#internalLink {
-    font-size: 30px;
+#titleLink {
+    font-size: 20px;
 }
 
-#externalLink {
-    font-size: 30px;
+#internalLinks {
+    font-size: 20px;
+}
+
+#externalLinks {
+    font-size: 20px;
+    float: right;
 }
 
 #linkedInButton {
@@ -25,6 +30,6 @@ img {
 }
 
 #body-text {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
