@@ -12,24 +12,34 @@
     float: right;
 }
 
-#linkedInButton {
-    width: 200px;
-    height: 50px;
-
-    color: crimson;
-}
-
 #hiddenText {
     font-size: 30px;
     color: darkblue;
 }
 
-img {
+#trek-image {
     width:auto;
     max-width: 100%;
+}
+
+#lobster-logo {
+    width: 50%;
+    float: right;
+    margin-top: 3%;
+}
+
+#linkedin-logo {
+    width: 50%;
+    float: right;
+    margin-top: 1%;
 }
 
 #body-text {
     margin-left: 5%;
     margin-right: 5%;
+}
+
+.navbar-section {
+    max-width: 100px;
+    width: 50%;
 }
