@@ -1,4 +1,9 @@
 
+.navbar-header {
+    max-width: 100px;
+    float: top;
+}
+
 #titleLink {
     font-size: 20px;
 }
@@ -23,6 +28,12 @@
 }
 
 #lobster-logo {
+    width: 50%;
+    float: top;
+    margin-top: -13%;
+}
+
+#github-logo {
     width: 50%;
     float: right;
     margin-top: 3%;
