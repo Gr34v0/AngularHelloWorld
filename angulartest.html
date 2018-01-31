@@ -1,11 +1,23 @@
 <!doctype html>
 <html ng-app>
 	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
-		<h1>Test HTML/AngularJS page</h1>
+		<title>Christian Greaves' SE Project page</title>
+		<link rel="stylesheet" href="landing.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="//code.jquery.com/jquery.min.js"></script>
+		<script src="landing.js"></script>
 	</head>
+
+	<div id="nav-placeholder">
+		<script>
+            $.get("navigation.html", function(data){
+                $("#nav-placeholder").replaceWith(data);
+            });
+		</script>
+	</div>
+
 	<body>
-		<h2><a href="index.html">Link back to home page</a></h2>
         <h3>This is a test of inline Angular forms and variables.</h3>
 		<div>
 			<label>Name:</label>

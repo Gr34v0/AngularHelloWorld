@@ -2,33 +2,34 @@
 <html ng-app="myApp">
   <head>
 	<title>Christian Greaves' SE Project page</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
-	<script src="landing.js"></script>
     <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+	<script src="landing.js"></script>
   </head>
-  <h1>AngularJS Hello World langing page</h1>
-  <body>
-    <p id="internalLink">
-        <a href="angulartest.html">
-            Internal Link to a AngularJS page
-        </a>
-    </p>
-    <button id="linkedInButton" ng-click="toggle=!toggle">
-        {{!toggle ? "Click here to see my LinkedIn page" : "Click again to hide the link"}}
-    </button>
-    <div class="box" ng-show="toggle" ng-animate="'box'">
-        <a href="https://www.linkedin.com/in/gr34v0/" target="_blank" id="hiddenText">External Link to LinkedIn</a>
-    </div>
-    <p>
-        I have very little experience in web technology. Over both of my COOPs I was tasked with nearly exclusively
-        backend development, but I was briefly exposed to HTML/CSS/JS in my first, and I developed a REST API and
-        utilized said API on my second. I wish to learn as much as I can about web development as I can so that I am
-        no longer in the dark about the subject.
-    </p>
-    <p>
-        Star Trek is one of my favorite things, and thus I thought it would be appropriate to add a picture of the
-        latest iteration of Star Trek as my "favorite thing" image.
-    </p>
-    <img src="resources/DiscoveryImage.jpg">
-  </body>
+
+  <div id="nav-placeholder">
+      <script>
+          $.get("navigation.html", function(data){
+              $("#nav-placeholder").replaceWith(data);
+          });
+      </script>
+  </div>
+
+  <div>
+      <body id="body-text">
+        <p>
+            I have very little experience in web technology. Over both of my COOPs I was tasked with nearly exclusively
+            backend development, but I was briefly exposed to HTML/CSS/JS in my first, and I developed a REST API and
+            utilized said API on my second. I wish to learn as much as I can about web development as I can so that I am
+            no longer in the dark about the subject.
+        </p>
+        <p>
+            Star Trek is one of my favorite things, and thus I thought it would be appropriate to add a picture of the
+            latest iteration of Star Trek as my "favorite thing" image.
+        </p>
+        <img src="resources/DiscoveryImage.jpg">
+      </body>
+  </div>
 </html>

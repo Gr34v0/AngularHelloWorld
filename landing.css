@@ -1,7 +1,10 @@
 
 #internalLink {
     font-size: 30px;
-    color: green;
+}
+
+#externalLink {
+    font-size: 30px;
 }
 
 #linkedInButton {
@@ -19,4 +22,8 @@
 img {
     width:auto;
     max-width: 100%;
+}
+
+#body-text {
+    padding-left: inherit;
 }
