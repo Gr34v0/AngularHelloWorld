@@ -1,7 +1,7 @@
 <html>
     <title>GET</title>
     <head>
-        <link rel="stylesheet" href="../base/site-wide.css">
+        <link rel="stylesheet" href="../resources/site-wide.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="//code.jquery.com/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
