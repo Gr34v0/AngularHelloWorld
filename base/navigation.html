@@ -5,34 +5,38 @@
                 <img src="../resources/TML.jpg" id="lobster-logo" alt="Home Page">
             </a>
         </div>
-        <ul class="nav navbar-nav" id="internalLinks"><!-- ADRIAN SAID THIS WILL BREAK -->
-            <li><a href="../base/resume.html">Resume</a></li>
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="../basicWebDev/about.html">Basic Web Page</a></li>
-                    <li><a href="../getPostProject/get.html">GET POST Example</a></li>
+        <div class="collapse navbar-collapse" data-hover="dropdown" data-animations="fadeInDown">
+            <ul class="nav navbar-nav" id="internalLinks"><!-- ADRIAN SAID THIS WILL BREAK -->
+                <li><a href="../base/resume.html">Resume</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#">
+                        Projects<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdownhover-bottom" role="menu">
+                        <li><a href="../basicWebDev/about.html">Basic Web Page</a></li>
+                        <li><a href="../getPostProject/get.html">GET POST Example</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav" id="externalLinks">
+                <ul class="nav navbar-nav">
+                    <li class="navbar-section">
+                        <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-linkedin-512.png" id="linkedin-logo">
+                    </li>
+                    <li class="navbar-section">
+                        <a href="https://www.linkedin.com/in/gr34v0/" target="_blank">LinkedIn</a>
+                    </li>
                 </ul>
-            </li>
-        </ul>
-        <ul class="nav navbar-nav" id="externalLinks">
-            <ul class="nav navbar-nav">
-                <li class="navbar-section">
-                    <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-linkedin-512.png" id="linkedin-logo">
-                </li>
-                <li class="navbar-section">
-                    <a href="https://www.linkedin.com/in/gr34v0/" target="_blank">LinkedIn</a>
-                </li>
-            </ul>
 
-            <!-- <li><img src="resources/TML.jpg" id="lobster-logo"> </li> -->
-            <ul class="nav navbar-nav">
-                <li class="navbar-section">
-                    <img src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" id="github-logo">
-                </li>
-                <li class="navbar-section">
-                    <a href="https://github.com/Gr34v0" target="_blank">Github</a>
-                </li>
+                <ul class="nav navbar-nav">
+                    <li class="navbar-section">
+                        <img src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" id="github-logo">
+                    </li>
+                    <li class="navbar-section">
+                        <a href="https://github.com/Gr34v0" target="_blank">Github</a>
+                    </li>
+                </ul>
             </ul>
-        </ul>
+        </div>
     </div>
 </nav>
