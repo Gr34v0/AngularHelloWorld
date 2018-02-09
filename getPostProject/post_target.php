@@ -20,8 +20,7 @@
         <a href="post.html">POST Example Homepage</a>
     </h2>
     <hr>
-
-    <body>
+    <body id="body-text">
         <p>First Name: <?php echo $_POST['fname']; ?></p>
         <p>Last Name: <?php echo $_POST['lname']; ?></p>
         <p>Age: <?php echo $_POST['age']; ?></p>
