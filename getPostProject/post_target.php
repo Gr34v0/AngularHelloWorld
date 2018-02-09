@@ -37,6 +37,8 @@
 
     </body>
 
+    <hr>
+
     <div id="footer-placeholder">
         <script>
             $.get("../base/footer.html", function(data){
