@@ -13,9 +13,24 @@
         </script>
     </div>
 
-    <div id="body-text">
-        <body>
-            HOME PAGE NO CONTENT
-        </body>
+    <body id="body-text">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+
+            </div>
+            <div class="panel-body">
+                HOME PAGE NO CONTENT
+            </div>
+        </div>
+    </body>
+
+    <hr>
+    <div id="footer-placeholder">
+        <script>
+            $.get("../base/footer.html", function(data){
+                $("#footer-placeholder").replaceWith(data);
+            });
+        </script>
     </div>
+
 </html>

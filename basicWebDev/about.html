@@ -13,19 +13,34 @@
 		</script>
 	</div>
 
-	<div id="body-text">
-		<body>
-		<p>
-			I have very little experience in web technology. Over both of my COOPs I was tasked with nearly exclusively
-			backend development, but I was briefly exposed to HTML/CSS/JS in my first, and I developed a REST API and
-			utilized said API on my second. I wish to learn as much as I can about web development as I can so that I am
-			no longer in the dark about the subject.
-		</p>
-		<p>
-			Star Trek is one of my favorite things, and thus I thought it would be appropriate to add a picture of the
-			latest iteration of Star Trek as my "favorite thing" image.
-		</p>
-		<img src="../resources/DiscoveryImage.jpg" id="trek-image">
-		</body>
+
+	<body id="body-text">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h2>Basic Web Page Example</h2>
+			</div>
+			<div class="panel-body">
+			<p>
+				I have very little experience in web technology. Over both of my COOPs I was tasked with nearly exclusively
+				backend development, but I was briefly exposed to HTML/CSS/JS in my first, and I developed a REST API and
+				utilized said API on my second. I wish to learn as much as I can about web development as I can so that I am
+				no longer in the dark about the subject.
+			</p>
+			<p>
+				Star Trek is one of my favorite things, and thus I thought it would be appropriate to add a picture of the
+				latest iteration of Star Trek as my "favorite thing" image.
+			</p>
+			<img src="../resources/DiscoveryImage.jpg" id="trek-image">
+			</div>
+		</div>
+	</body>
+
+	<div id="footer-placeholder">
+		<script>
+            $.get("../base/footer.html", function(data){
+                $("#footer-placeholder").replaceWith(data);
+            });
+		</script>
 	</div>
+
 </html>
