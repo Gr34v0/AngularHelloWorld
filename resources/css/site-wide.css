@@ -1,4 +1,8 @@
 
+body{
+    padding-top: 70px;
+}
+
 .navbar-header {
     max-width: 100px;
     float: top;
