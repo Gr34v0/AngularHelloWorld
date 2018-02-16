@@ -19,9 +19,31 @@
 
             </div>
             <div class="panel-body">
-                HOME PAGE NO CONTENT
+                <p>
+                    HOME PAGE NO CONTENT
+                    HOME PAGE NO CONTENT
+                    HOME PAGE NO CONTENTHOME PAGE NO CONTENTHOME PAGE NO CONTENTHOME PAGE NO CONTENTHOME PAGE NO CONTENTHOME PAGE NO CONTENTHOME PAGE NO CONTENTHOME PAGE NO CONTENTHOME PAGE NO CONTENT
+                    HOME PAGE NO CONTENTHOME PAGE NO CONTENTHOME PAGE NO CONTENTHOME PAGE NO CONTENT
+                </p>
+                <div class="" id="twitch-embed"></div>
+                <!-- Load the Twitch embed script -->
+                <script src="https://embed.twitch.tv/embed/v1.js"></script>
+                <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+                <script type="text/javascript">
+                    new Twitch.Embed("twitch-embed", {
+                        width: 854,
+                        height: 480,
+                        channel: "TheMediumLobster",
+                        layout: "video",
+                    });
+                </script>
+            </div>
+
+            <div class="panel-body" id="twitch-embed-div">
+
             </div>
         </div>
+
     </body>
 
     <hr>
