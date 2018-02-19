@@ -55,6 +55,11 @@
                     <?php endforeach; ?>
                 </ul>
 
+                <form action="weatherAPIhome.php" method="get">
+                    Enter your zip: <input type="text" name="zip"><br>
+                    <input type="submit">
+                </form>
+
                 <div id="forecast-section">
                     <hr/>
                     <h3>Your local forecast</h3>
