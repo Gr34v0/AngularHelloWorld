@@ -30,17 +30,19 @@
                     $weather_list = file_get_contents('http://www.se.rit.edu/~swen-344/activities/rest/RESTAPI-Weather.php?action=get_weather_list');
                     $weather_list = json_decode($weather_list, true);
 
-                    #$secret_key = file_get_contents("http://www.se.rit.edu/~swen-344/activities/rest/RESTAPI-Weather.php?action=get_secret_key");
-                    #$secret_key = json_decode($secret_key, true);
+                    $secret_key = file_get_contents("http://www.se.rit.edu/~swen-344/activities/rest/RESTAPI-Weather.php?action=get_secret_key");
+                    $secret_key = json_decode($secret_key, true);
 
                     function getWeather($zip) {
-                        $selected_weather = file_get_contents("");
-                        $selected_weather = json_decode($selected_weather, true );
+                        $selected = file_get_contents("http://www.se.rit.edu/~swen-344/activities/rest/RESTAPI-Weather.php?action=get_weather&zip=" . $zip);
+                        $selected_json = json_decode($selected, true );
+                        return $selected_json;
                     }
 
                     if (isset( $_GET["zip"])) {
-                        getWeather("zip");
+                        $selected_weather = getWeather($_GET["zip"]);
                     }
+
                 ?>
 
                 <ul id="ziplist">
@@ -56,11 +58,14 @@
                 <div id="forecast-section">
                     <hr/>
                     <h3>Your local forecast</h3>
+
                     <p>
                         <strong>Name:</strong>
                         <?php
                             if( is_null($selected_weather)){
                                 echo "NULL";
+                            } elseif( $selected_weather == "Missing argument" ){
+                                echo "Query is missing arguments";
                             } else {
                                 echo $selected_weather["name"];
                             }
@@ -72,6 +77,8 @@
                         <?php
                         if( is_null($selected_weather)){
                             echo "NULL";
+                        } elseif( $selected_weather == "Missing argument" ){
+                            echo "Query is missing arguments";
                         } else {
                             echo $selected_weather["forecast"];
                         }
