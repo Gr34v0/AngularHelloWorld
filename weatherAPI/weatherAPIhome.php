@@ -4,7 +4,7 @@
     <head>
         <!-- <script src="//code.jquery.com/jquery.min.js"></script> -->
         <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-        <script src="weather.js"></script>
+    <!-- <script src="weather.js"></script> -->
     </head>
 
     <div id="nav-placeholder">

@@ -1,6 +1,6 @@
 var loadDataForUser = function() {
     // build the url for the individual person (uses template strings)
-    const url = 'https://weatherapiactivity.herokuapp.com/RESTAPI-Weather.php?action=get_weather&zip='${this.zip};
+    const url = 'https://weatherapiactivity.herokuapp.com/RESTAPI-Weather.php?action=get_weather&zip=666'; //${this.zip};
     // load the data from the api
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
@@ -28,9 +28,10 @@ var loadDataForUser = function() {
             container.removeChild(container.firstChild);
         }
         container.appendChild(table);
-    }
+    };
     xhr.send();
 };
+
 window.onload = function() {
     // the url for the people list
     const url = 'https://weatherapiactivity.herokuapp.com/RESTAPI-Weather.php?action=get_weather_list';
@@ -55,6 +56,6 @@ window.onload = function() {
             // place it on the page
             document.getElementById('weather-list').appendChild(li);
         });
-    }
+    };
     xhr.send();
-}
+};
