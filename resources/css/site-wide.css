@@ -62,3 +62,13 @@ body{
 #twitch-embed {
     float: right;
 }
+
+#list-section {
+    margin-left: 15%;
+    float: left;
+}
+
+#forecast-section {
+    margin-right: 15%;
+    float: right;
+}

@@ -21,47 +21,48 @@
                 <h2>Weather R Us</h2>
             </div>
             <div class="panel-body">
-                <h3>Select your zip:</h3>
+                <div id="list-section">
+                    <h3>Select your zip:</h3>
 
-                <?php
+                    <?php
 
-                    $selected_weather = null;
+                        $selected_weather = null;
 
-                    $weather_list = file_get_contents('http://www.se.rit.edu/~swen-344/activities/rest/RESTAPI-Weather.php?action=get_weather_list');
-                    $weather_list = json_decode($weather_list, true);
+                        $weather_list = file_get_contents('http://www.se.rit.edu/~swen-344/activities/rest/RESTAPI-Weather.php?action=get_weather_list');
+                        $weather_list = json_decode($weather_list, true);
 
-                    $secret_key = file_get_contents("http://www.se.rit.edu/~swen-344/activities/rest/RESTAPI-Weather.php?action=get_secret_key");
-                    $secret_key = json_decode($secret_key, true);
+                        $secret_key = file_get_contents("http://www.se.rit.edu/~swen-344/activities/rest/RESTAPI-Weather.php?action=get_secret_key");
+                        $secret_key = json_decode($secret_key, true);
 
-                    function getWeather($zip) {
-                        $selected = file_get_contents("http://www.se.rit.edu/~swen-344/activities/rest/RESTAPI-Weather.php?action=get_weather&zip=" . $zip);
-                        $selected_json = json_decode($selected, true );
-                        return $selected_json;
-                    }
+                        function getWeather($zip) {
+                            $selected = file_get_contents("http://www.se.rit.edu/~swen-344/activities/rest/RESTAPI-Weather.php?action=get_weather&zip=" . $zip);
+                            $selected_json = json_decode($selected, true );
+                            return $selected_json;
+                        }
 
-                    if (isset( $_GET["zip"])) {
-                        $selected_weather = getWeather($_GET["zip"]);
-                    }
+                        if (isset( $_GET["zip"])) {
+                            $selected_weather = getWeather($_GET["zip"]);
+                        }
 
-                ?>
+                    ?>
 
-                <ul id="ziplist">
-                    <?php foreach ($weather_list as $weather): ?>
-                    <li>
-                        <a href=<?php echo "weatherAPIhome.php?zip=" . $weather["zip"] ?> >
-                            <?php echo $weather["name"]; echo " - "; echo $weather["zip"]; ?>
-                        </a>
-                    </li>
-                    <?php endforeach; ?>
-                </ul>
+                    <ul id="ziplist">
+                        <?php foreach ($weather_list as $weather): ?>
+                        <li>
+                            <a href=<?php echo "weatherAPIhome.php?zip=" . $weather["zip"] ?> >
+                                <?php echo $weather["name"]; echo " - "; echo $weather["zip"]; ?>
+                            </a>
+                        </li>
+                        <?php endforeach; ?>
+                    </ul>
 
-                <form action="weatherAPIhome.php" method="get">
-                    Enter your zip: <input type="text" name="zip"><br>
-                    <input type="submit">
-                </form>
+                    <form action="weatherAPIhome.php" method="get">
+                        Enter your zip: <input type="text" name="zip"><br>
+                        <input type="submit">
+                    </form>
+                </div>
 
                 <div id="forecast-section">
-                    <hr/>
                     <h3>Your local forecast</h3>
 
                     <p>
