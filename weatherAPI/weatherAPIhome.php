@@ -28,14 +28,14 @@
 
                         $selected_weather = null;
 
-                        $weather_list = file_get_contents('http://www.se.rit.edu/~swen-344/activities/rest/RESTAPI-Weather.php?action=get_weather_list');
+                        $weather_list = file_get_contents('http://weatherapiactivity.herokuapp.com/RESTAPI-Weather.php?action=get_weather_list');
                         $weather_list = json_decode($weather_list, true);
 
-                        $secret_key = file_get_contents("http://www.se.rit.edu/~swen-344/activities/rest/RESTAPI-Weather.php?action=get_secret_key");
+                        $secret_key = file_get_contents("http://weatherapiactivity.herokuapp.com/RESTAPI-Weather.php?action=get_secret_key");
                         $secret_key = json_decode($secret_key, true);
 
                         function getWeather($zip) {
-                            $selected = file_get_contents("http://www.se.rit.edu/~swen-344/activities/rest/RESTAPI-Weather.php?action=get_weather&zip=" . $zip);
+                            $selected = file_get_contents("http://weatherapiactivity.herokuapp.com/RESTAPI-Weather.php?action=get_weather&zip=" . $zip);
                             $selected_json = json_decode($selected, true );
                             return $selected_json;
                         }
