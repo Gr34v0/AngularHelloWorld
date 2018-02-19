@@ -91,7 +91,7 @@
                         ?>
                         <span id="forecast"></span>
                     </p>
-                    <img id="image" src="<?php echo $selected_weather["image"] ?>"/>
+                    <img id="forecast-image" src="<?php echo $selected_weather["image"] ?>"/>
                 </div>
             </div>
         </div>
