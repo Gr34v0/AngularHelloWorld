@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+    <title>Introduction to JQuery</title>
+    <head>
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript" src="../resources/slick-1.8.0/slick/slick.min.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="../resources/slick-1.8.0/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="../resources/slick-1.8.0/slick/slick-theme.css"/>
+        <script>
+            $( function() {
+                $("#datepicker").datepicker();
+            });
+
+            $( function() {
+                $( "#draggable" ).draggable();
+            });
+
+
+            $(document).ready(function () {
+                $('.single-item').slick({
+                    dots: true,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true
+                });
+            });
+
+        </script>
+
+        <style>
+            #draggable { width: 150px; height: 150px; padding: 0.5em; background-color: lightgreen; color: red}
+
+            .container {
+                margin: 0 auto;
+                padding: 40px;
+                width: 80%;
+                color: #333;
+                background: #419be0;
+            }
+
+            .single-item {
+                text-align: center;
+                color: #419be0;
+                background: white;
+            }
+
+        </style>
+
+    </head>
+
+    <div id="nav-placeholder">
+        <script>
+            $.get("../base/navigation.html", function(data){
+                $("#nav-placeholder").replaceWith(data);
+            });
+        </script>
+    </div>
+
+    <body id="body-text">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>JQuery Demos</h2>
+            </div>
+
+            <div class="panel-body">
+                <h3>Date Picker Calendar</h3>
+                <p>
+                    Date: <input type="text" id="datepicker">
+                </p>
+            </div>
+
+            <div class="panel-body">
+                <h3>Draggable DOM Element</h3>
+                <p>
+                    <div id="draggable" class="ui-widget-content">
+                        <p>Drag me around</p>
+                    </div>
+                </p>
+            </div>
+
+            <div class="panel-body">
+                <h3>Image Carousel</h3>
+                <div class='container'>
+                    <div class='slider single-item'>
+                        <div><h3>1</h3></div>
+                        <div><h3>2</h3></div>
+                        <div><h3>3</h3></div>
+                        <div><h3>4</h3></div>
+                        <div><h3>5</h3></div>
+                        <div><h3>6</h3></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-body">
+                <h3>One other Jquery feature</h3>
+            </div>
+
+        </div>
+    </body>
+
+    <hr>
+
+    <div id="footer-placeholder">
+        <script>
+            $.get("../base/footer.html", function(data){
+                $("#footer-placeholder").replaceWith(data);
+            });
+        </script>
+    </div>
+</html>
