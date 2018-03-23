@@ -18,6 +18,10 @@
                 $( "#draggable" ).draggable();
             });
 
+            $( function() {
+                $( "#tabs" ).tabs();
+            } );
+
 
             $(document).ready(function () {
                 $('.single-item').slick({
@@ -98,7 +102,41 @@
             </div>
 
             <div class="panel-body">
-                <h3>One other Jquery feature</h3>
+                <h3>Tabs!</h3>
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#tabs-1">Javascript hate satire</a></li>
+                        <li><a href="#tabs-2">JRR Tolkien</a></li>
+                        <li><a href="#tabs-3">Hemingway</a></li>
+                    </ul>
+                    <div id="tabs-1">
+                        <p>
+                            Eyy, you clicked on Tab 1. Let me tell you a story about tabs. Back in my day you had to do
+                            things by hand, this newfangled Jquery tab thing is too complicated for it's own good.
+                            I say we go back to the good old days of everything on the Terminal. You can't have UI bugs
+                            if there is no UI, amirite?
+                        </p>
+                    </div>
+                    <div id="tabs-2">
+                        <p>
+                            All that is gold does not glitter;
+                            all that is long does not last;
+                            All that is old does not wither;
+                            not all that is over is past.
+                        </p>
+                        <p>
+                            Not all that have fallen are vanquished;
+                            a king may yet be without crown,
+                            A blade that was broken be brandished;
+                            and towers that were strong may fall down.
+                        </p>
+                    </div>
+                    <div id="tabs-3">
+                        <p>
+                            For sale: Baby shoes, never worn.
+                        </p>
+                    </div>
+                </div>
             </div>
 
         </div>
