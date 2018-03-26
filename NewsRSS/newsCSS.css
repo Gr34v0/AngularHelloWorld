@@ -1,0 +1,34 @@
+body {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+/* reset styling */
+body * {
+    margin: 0;
+    padding: 0;
+}
+
+#header * {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.item {
+    border: 1px solid red;
+    padding: 1em;
+    margin: 0.5em;
+    text-align: left;
+}
+
+.item h2 {
+    font-size: 120%;
+    padding-bottom: 0.2em;
+}
+
+/* not used right now because the descriptions are the same as the titles */
+.item p {
+    padding-top: 0.2em;
+}

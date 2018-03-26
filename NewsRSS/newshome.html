@@ -1,33 +1,35 @@
 <!doctype html>
 <html>
-<title>TITLE HERE</title>
+<title>News RSS</title>
 <head>
     <script src="//code.jquery.com/jquery.min.js"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <script src="newsJS.js"></script>
+    <link rel="stylesheet" href="newsCSS.css">
+
 </head>
 
 <div id="nav-placeholder">
     <script>
-        $.get("navigation.html", function(data){
+        $.get("../base/navigation.html", function(data){
             $("#nav-placeholder").replaceWith(data);
         });
     </script>
 </div>
 
 <body id="body-text">
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h2>NewsRSS</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>NewsRSS</h2>
+        </div>
+        <div class="panel-body">
+            <div id="content">
+
+            PAGE CONTENT HERE
+
+            </div>
+        </div>
     </div>
-    <div class="panel-body">
-
-
-
-        PAGE CONTENT HERE
-
-
-
-    </div>
-</div>
 </body>
 
 <hr>
