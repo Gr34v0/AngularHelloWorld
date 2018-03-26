@@ -19,17 +19,22 @@
             if(person=="Cool"){
             //   alert("cool");
                var data_file= "data.json";
-
-            }else{
+            }
+            else if(person=="Bad"){
                //  alert("bad");
                var data_file= "data2.json";
-              
+            }
+            else if( person=="Worst"){
+                var data_file="data3.json";
+            }
+            else{
+                var data_file="data0.json";
             }
 
 
-            // Clear out existing info
-            document.getElementById("Name").innerHTML = "-";
-            document.getElementById("Country").innerHTML = "-";
+         // Clear out existing info
+         document.getElementById("Name").innerHTML = "-";
+         document.getElementById("Country").innerHTML = "-";
 
 
 
@@ -90,6 +95,7 @@
    <div class = "central">
          <button type = "button" onclick = "loadJSON('Cool')">A Cool Person </button>
          <button type = "button" onclick = "loadJSON('Bad')">A Bad Person </button>
+         <button type = "button" onclick = "loadJSON('Worst')"> The Worst Person </button>
    </div>
 
 
