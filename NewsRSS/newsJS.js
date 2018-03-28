@@ -6,12 +6,29 @@ window.onload = init;
 function init(){
     //NHL URL for ESPN RSS feed
     //var url = "http://espn.go.com/espn/rss/nhl/news";
-    var url = "http://espn.go.com/espn/rss/nba/news"; //USE ESPN LINKS
+    //var url = "http://espn.go.com/espn/rss/nfl/news";
+    //var url = "http://espn.go.com/espn/rss/nba/news"; //USE ESPN LINKS
+
+    var urls = new Array();
+    var stringUrl = "Checked: ";
+
+    $('input[type=checkbox]').each(function () {
+        if(this.checked) {
+            urls.push(this.value);
+            stringUrl += this.name + " ";
+        }
+    });
+
+    console.log(urls);
+
+    document.querySelector("#checked").innerHTML = "<p>" + stringUrl + "</p>";
 
     document.querySelector("#content").innerHTML = "<b>Loading news...</b>";
     $("#content").fadeOut(250);
     //fetch the data
-    $.get(url).done(function(data){xmlLoaded(data);});
+    urls.forEach(function(url){
+        $.get(url).done(function(data){xmlLoaded(data);});
+    });
 }
 
 
@@ -21,7 +38,7 @@ function xmlLoaded(obj){
     var items = obj.querySelectorAll("item");
 
     //show the logo
-    var image = obj.querySelector("image")
+    var image = obj.querySelector("image");
     var logoSrc = image.querySelector("url").firstChild.nodeValue;
     var logoLink = image.querySelector("link").firstChild.nodeValue;
     $("#logo").attr("src",logoSrc);
