@@ -4,10 +4,6 @@
 window.onload = init;
 
 function init(){
-    //NHL URL for ESPN RSS feed
-    //var url = "http://espn.go.com/espn/rss/nhl/news";
-    //var url = "http://espn.go.com/espn/rss/nfl/news";
-    //var url = "http://espn.go.com/espn/rss/nba/news"; //USE ESPN LINKS
 
     var urls = new Array();
     var stringUrl = "Checked: ";
@@ -36,7 +32,7 @@ function xmlLoaded(obj){
     console.log("obj = " +obj);
 
     var items = obj.querySelectorAll("item");
-
+    var origin = obj.querySelector("title").firstChild.nodeValue;
     //show the logo
     var image = obj.querySelector("image");
     var logoSrc = image.querySelector("url").firstChild.nodeValue;
@@ -56,7 +52,8 @@ function xmlLoaded(obj){
 
         //present the item as HTML
         var line = '<div class="item">';
-        line += "<h2>"+title+"</h2>";
+        line += "<h2>"+ origin + "</h2>";
+        line += "<h2>" + title + "</h2>";
         line += '<p><i>'+pubDate+'</i> - <a href="'+link+'" target="_blank">See original</a></p>';
         //title and description are always the same (for some reason) so I'm only including one
         //line += "<p>"+description+"</p>";
