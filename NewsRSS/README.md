@@ -6,22 +6,22 @@
 ## Requirements
  
 ### Functional
- * All information should be shown in a single aggregate news list
- * The user should be able to decide to show only certain news feeds. This should be done in real time.
+ * <s>All information should be shown in a single aggregate news list</s>
+ * <s>The user should be able to decide to show only certain news feeds. This should be done in real time.</s>
  * The user should be able to 'favorite' stories. They should be able to see a list of their favorite stories and remove them from the list.
  * The single page application should be aesthetically pleasing, clean and easy to use.
  * Data storage should be done in a local XML/JSon file. Relational SQL and MongoDB are not allowed. You also may not use .csv, or flatfiles.
  * You must ensure that your application has proper [responsive design](http://www.w3schools.com/html/html_responsive.asp). I will be using several recent browsers and mobile devices to test your site.
  * User's should be able to create new accounts. This means that someone should be able to visit the page, and select that they want to create a new user. They should create a new username and password. Security is not an issue here, so don't worry about storing user names/passwords in XML/JSON. You do not need any forgot password reminders.
  * Use cookies/HTML5 to remember the last time a user visited the page. This information should be shown on the main page ("Your last visit was on mm-dd-yyyy HH:mm:ss")
- * Optimally, the site should use AJAX to eliminate the need for refreshing the page. All information should be shown in real time.
+ * <s>Optimally, the site should use AJAX to eliminate the need for refreshing the page. All information should be shown in real time.</s>
  * The most current items should be shown at the top of the page. As you scroll down the page, the items should get older (think how Twitter shows tweets.)
 
 ### Non-Functional
- * You must use RSS to collect your data.
- * You must host your page on your RIT SE public_html personal directory.
- * Instructions for using this resource are provided [here](http://www.se.rit.edu/~swen-344/resources/SE_public_HTML_instructions.html).
- * You cannot use your team's project VM or any other hosting resource. You are limited in what you can install in our accounts, but you should have the ability to create the necessary project components.
+ * <s>You must use RSS to collect your data.</s>
+ * <s>You must host your page on your RIT SE public_html personal directory.</s>
+    * <s>Instructions for using this resource are provided [here](http://www.se.rit.edu/~swen-344/resources/SE_public_HTML_instructions.html).</s>
+ * <s>You cannot use your team's project VM or any other hosting resource. You are limited in what you can install in our accounts, but you should have the ability to create the necessary project components.</s>
  * It is very important that you get your deliverable working on your account. You will lose a substantial amount of points if you get the application working in another location, but it will not work on your account. You are highly encouraged to test your submission in this location early and often.
 
 ## Helpful Links
