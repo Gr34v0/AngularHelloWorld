@@ -5,7 +5,8 @@ window.onload = init;
 
 function init(){
     //NHL URL for ESPN RSS feed
-    var url = "http://espn.go.com/espn/rss/nhl/news";
+    //var url = "http://espn.go.com/espn/rss/nhl/news";
+    var url = "http://espn.go.com/espn/rss/nba/news"; //USE ESPN LINKS
 
     document.querySelector("#content").innerHTML = "<b>Loading news...</b>";
     $("#content").fadeOut(250);
