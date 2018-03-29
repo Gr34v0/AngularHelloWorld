@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<title>TITLE HERE</title>
+<head>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+</head>
+
+<div id="nav-placeholder">
+    <script>
+        $.get("../base/navigation.html", function(data){
+            $("#nav-placeholder").replaceWith(data);
+        });
+    </script>
+</div>
+
+<body id="body-text">
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>HEADER AND TITLE HERE</h2>
+    </div>
+    <div class="panel-body">
+        PAGE CONTENT HERE
+    </div>
+</div>
+</body>
+
+<hr>
+
+<div id="footer-placeholder">
+    <script>
+        $.get("../base/footer.html", function(data){
+            $("#footer-placeholder").replaceWith(data);
+        });
+    </script>
+</div>
+</html>

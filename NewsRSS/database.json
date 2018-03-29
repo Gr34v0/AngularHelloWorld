@@ -1,0 +1,60 @@
+[
+  {
+    "_id": "5abd494ac50f6f4640363403",
+    "index": 0,
+    "guid": "4d30dddd-9ff8-461e-b108-7d6c46b1d3ab",
+    "name": "Whitney",
+    "favs": [
+      {
+        "index": 0,
+        "title": "TITLE",
+        "description": "DESC",
+        "link": "Url would be here Russo",
+        "pubDate": "date"
+      },
+      {
+        "index": 1,
+        "title": "TITLE",
+        "description": "DESC",
+        "link": "Url would be here Pennington",
+        "pubDate": "date"
+      },
+      {
+        "index": 2,
+        "title": "TITLE",
+        "description": "DESC",
+        "link": "Url would be here Fernandez",
+        "pubDate": "date"
+      }
+    ]
+  },
+  {
+    "_id": "5abd494a0915fca5ee1b68a3",
+    "index": 1,
+    "guid": "2da555a9-7b8f-442f-bb80-314459d67e57",
+    "name": "Stanley",
+    "favs": [
+      {
+        "index": 0,
+        "title": "TITLE",
+        "description": "DESC",
+        "link": "Url would be here Lopez",
+        "pubDate": "date"
+      },
+      {
+        "index": 1,
+        "title": "TITLE",
+        "description": "DESC",
+        "link": "Url would be here Harrison",
+        "pubDate": "date"
+      },
+      {
+        "index": 2,
+        "title": "TITLE",
+        "description": "DESC",
+        "link": "Url would be here Lamb",
+        "pubDate": "date"
+      }
+    ]
+  }
+]

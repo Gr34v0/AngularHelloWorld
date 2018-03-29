@@ -1,17 +1,38 @@
-body {
+.panel {
     max-width: 800px;
     margin: auto;
     text-align: center;
 }
-/* reset styling */
+/* reset styling*/
 body * {
     margin: 0;
     padding: 0;
 }
 
+#panel-heading-text {
+    text-align: left;
+}
+
+.login-div {
+    float: right;
+}
+
+#login{
+    display : none;
+}
+
+#favsButton{
+    float: right;
+}
+
+#register{
+    display : block;
+}
+
+
 #header * {
     display: inline-block;
-    vertical-align: middle;
+    /*vertical-align: middle;*/
     padding-left: 1em;
     padding-right: 1em;
 }
@@ -28,7 +49,7 @@ body * {
     padding-bottom: 0.2em;
 }
 
-/* not used right now because the descriptions are the same as the titles */
+/* not used right now because the descriptions are the same as the titles*/
 .item p {
     padding-top: 0.2em;
 }
