@@ -28,6 +28,9 @@ body * {
 #register{
     display : block;
 }
+#logged-in{
+    display : none;
+}
 
 
 #header * {

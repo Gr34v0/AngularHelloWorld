@@ -66,7 +66,7 @@ function xmlLoaded(obj){
         html += line;
     }
 
-    console.log(html);
+    //console.log(html);
 
     //date sorting ... Date.parse( pubDate HERE );
 
@@ -75,61 +75,68 @@ function xmlLoaded(obj){
     $("#content").fadeIn(1000);
 
 }
+
 
 function favs(){
 
-    var items = obj.querySelectorAll("item");
-    var origin = obj.querySelector("title").firstChild.nodeValue;
-    //show the logo
-    var image = obj.querySelector("image");
-    var logoSrc = image.querySelector("url").firstChild.nodeValue;
-    var logoLink = image.querySelector("link").firstChild.nodeValue;
-    $("#logo").attr("src",logoSrc);
-
-    //parse the data
-    var html = "";
-    for (var i=0;i<items.length;i++){
-        //get the data out of the item
-        var newsItem = items[i];
-        var title = newsItem.querySelector("title").firstChild.nodeValue;
-        console.log(title);
-        var description = newsItem.querySelector("description").firstChild.nodeValue;
-        var link = newsItem.querySelector("link").firstChild.nodeValue;
-        var pubDate = newsItem.querySelector("pubDate").firstChild.nodeValue;
-        var parsedDate = Date.parse(pubDate);
-
-        //present the item as HTML
-        var line = '<div data-newsdate='+ parsedDate +' class="item">';
-        line += "<h2>"+ origin + "</h2>";
-        line += "<h2>" + title + "</h2>";
-        line += '<p><i id="pubDate">'+pubDate+'</i> - <a href="'+link+'" target="_blank">See original</a> - <a href="#" onclick="addFav()">Add to Favorites</a></p>';
-        //title and description are always the same (for some reason) so I'm only including one
-        //line += "<p>"+description+"</p>";
-        line += "</div>";
-
-        html += line;
-    }
-
-    console.log(html);
-
-    //date sorting ... Date.parse( pubDate HERE );
-
-    document.querySelector("#content").innerHTML += html;
-
-    $("#content").fadeIn(1000);
-
 }
+
 
 function addFav(){
 
 }
 
 
+function login(){
+
+    if(typeof(Storage) !== "undefined") {
+
+        var username = document.getElementById('lg_username').value;
+
+        if (localStorage.username ===  username) {
+            document.getElementById("lgdin-username").innerHTML = username;
+            loginSuccess();
+        } else {
+            alert("Username is not registered");
+        }
+    } else {
+        alert("Sorry, your browser does not support web storage...");
+    }
+}
+
+
+function register(){
+
+    if(typeof(Storage) !== "undefined") {
+
+        var username = document.getElementById('reg_username').value;
+
+        console.log( username + " HERE" );
+
+        if (localStorage.username ===  username) {
+            alert("Username " + username + " already taken. Sign in or choose a new name.");
+        } else {
+            localStorage.username = username;
+            alreadyMember();
+        }
+        //document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+    } else {
+        alert("Sorry, your browser does not support web storage...");
+    }
+}
+
+function loginSuccess(){
+    $("#register").css('display', 'none');
+    $("#login").css('display', 'none');
+    $("#logged-in").css('display', 'block');
+
+}
 
 function alreadyMember(){
 
     $("#register").css('display', 'none');
     $("#login").css('display', 'block');
+    $("#logged-in").css('display', 'none');
 
 }
 
@@ -137,5 +144,6 @@ function notMember(){
 
     $("#login").css('display', 'none');
     $("#register").css('display', 'block');
+    $("#logged-in").css('display', 'none');
 
 }
