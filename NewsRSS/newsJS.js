@@ -79,6 +79,8 @@ function xmlLoaded(obj){
 
 function favs(){
 
+
+
 }
 
 
@@ -92,8 +94,9 @@ function login(){
     if(typeof(Storage) !== "undefined") {
 
         var username = document.getElementById('lg_username').value;
+        var password = document.getElementById('lg_password').value;
 
-        if (localStorage.username ===  username) {
+        if (localStorage.username ===  username + " " + password) {
             document.getElementById("lgdin-username").innerHTML = username;
             loginSuccess();
         } else {
@@ -110,14 +113,19 @@ function register(){
     if(typeof(Storage) !== "undefined") {
 
         var username = document.getElementById('reg_username').value;
+        var password = document.getElementById('reg_password').value;
 
-        console.log( username + " HERE" );
-
-        if (localStorage.username ===  username) {
-            alert("Username " + username + " already taken. Sign in or choose a new name.");
+        if(password === "" || password == null){
+            alert("Password is required");
         } else {
-            localStorage.username = username;
-            alreadyMember();
+            console.log(username + " HERE");
+
+            if (localStorage.username === username + " " + password) {
+                alert("Username " + username + " already taken. Sign in or choose a new name.");
+            } else {
+                localStorage.username = username + " " + password;
+                alreadyMember();
+            }
         }
         //document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
     } else {
@@ -130,6 +138,10 @@ function loginSuccess(){
     $("#login").css('display', 'none');
     $("#logged-in").css('display', 'block');
 
+}
+
+function logout(){
+    notMember();
 }
 
 function alreadyMember(){
