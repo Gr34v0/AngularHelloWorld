@@ -25,6 +25,10 @@ body * {
     float: right;
 }
 
+#rssButton{
+    float: right;
+}
+
 #register{
     display : block;
 }

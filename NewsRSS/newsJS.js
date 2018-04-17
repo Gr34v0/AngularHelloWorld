@@ -90,6 +90,8 @@ function xmlLoaded(obj){
 
 function favs(){
 
+    var html = "";
+
     if(loggedin){
         $("#content").fadeOut(250);
 
@@ -100,7 +102,26 @@ function favs(){
         $("#content").fadeIn(1000);
 
 
-        document.querySelector("#content").innerHTML = localStorage.getItem( sessionStorage.getItem("user")).toString();
+        var favsList = JSON.parse(localStorage.getItem(sessionStorage.getItem("user")+"List"));
+
+        for(var i = 0; i < favsList.length; i++){
+            var newsItem = favsList[i];
+            var link = newsItem.link;
+            var title = newsItem.title;
+            var origin = newsItem.origin;
+            var pubDate = newsItem.pubDate;
+            var parsedDate = newsItem.parsedDate;
+
+            var line = '<div data-newsdate='+ parsedDate +' class="item">';
+            line += "<h2>"+ origin + "</h2>";
+            line += "<h2>" + title + "</h2>";
+            line += '<p><i id="pubDate">'+pubDate+'</i> - <a href="'+link+'" target="_blank">See original</a>';
+            line += "</p></div>";
+
+            html += line;
+        }
+
+        document.querySelector("#content").innerHTML = html;
 
     }
 
@@ -125,7 +146,7 @@ function addFav(link, title, pubDate, parsedDate, origin){
 
     //var favsList = [];
 
-    var favsList = localStorage.getItem(username);
+    var favsList = localStorage.getItem(username+"List");
 
     favsList = JSON.parse(favsList);
 
@@ -139,7 +160,7 @@ function addFav(link, title, pubDate, parsedDate, origin){
 
     console.log(favsList);
 
-    localStorage.setItem(username, JSON.stringify(favsList));
+    localStorage.setItem(username+"List", JSON.stringify(favsList));
 
     console.log(localStorage.getItem(username).toString());
 
@@ -154,9 +175,9 @@ function login(){
         var username = document.getElementById('lg_username').value;
         var password = document.getElementById('lg_password').value;
 
-        if (localStorage.username ===  username + " " + password) {
+        if (localStorage.getItem(username) === password ){
             document.getElementById("lgdin-username").innerHTML = username;
-            loginSuccess(username + " " + password);
+            loginSuccess(username);
         } else {
             alert("Username is not registered");
         }
@@ -181,9 +202,8 @@ function register(){
             if (localStorage.username === username + " " + password) {
                 alert("Username " + username + " already taken. Sign in or choose a new name.");
             } else {
-                localStorage.username = username + " " + password;
-                var usrnmpsswd = username + " " + password;
-                localStorage.setItem(usrnmpsswd, "[]");
+                localStorage.setItem(username, password);
+                localStorage.setItem(username + "List", "[]");
                 alreadyMember();
             }
         }
