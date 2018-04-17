@@ -3,6 +3,8 @@
 
 window.onload = init;
 
+var loggedin = false;
+
 function init(){
 
     var html = "";
@@ -22,11 +24,16 @@ function init(){
 
     document.querySelector("#content").innerHTML = "";
 
+    if(!loggedin){
+        $("#favsButton").css('display', 'none');
+    }
+    $("#rssButton").css('display', 'none');
+
     //document.querySelector("#checked").innerHTML = "<p>" + stringUrl + "</p>";
 
     //fetch the data
     urls.forEach(function(url){
-        $.get(url).done(function(data){html = xmlLoaded(data);});
+        $.get(url).done(function(data){html += xmlLoaded(data);});
     });
 }
 
@@ -48,6 +55,7 @@ function xmlLoaded(obj){
         //get the data out of the item
         var newsItem = items[i];
         var title = newsItem.querySelector("title").firstChild.nodeValue;
+        //title = title.replace( "'" , "&apos;");
         console.log(title);
         var description = newsItem.querySelector("description").firstChild.nodeValue;
         var link = newsItem.querySelector("link").firstChild.nodeValue;
@@ -58,10 +66,13 @@ function xmlLoaded(obj){
         var line = '<div data-newsdate='+ parsedDate +' class="item">';
         line += "<h2>"+ origin + "</h2>";
         line += "<h2>" + title + "</h2>";
-        line += '<p><i id="pubDate">'+pubDate+'</i> - <a href="'+link+'" target="_blank">See original</a> - <a href="#" onclick="addFav()">Add to Favorites</a></p>';
-        //title and description are always the same (for some reason) so I'm only including one
-        //line += "<p>"+description+"</p>";
-        line += "</div>";
+        line += '<p><i id="pubDate">'+pubDate+'</i> - <a href="'+link+'" target="_blank">See original</a>';
+
+        if(loggedin) {
+            line += ' - <a href="#" onclick="addFav(\''+link+'\' , \''+title.replace(/["']/g, "")+'\' , \''+pubDate+'\' , \''+parsedDate+'\' , \''+origin+'\')">Add to Favorites</a>';
+        }
+
+        line += "</p></div>";
 
         html += line;
     }
@@ -79,12 +90,42 @@ function xmlLoaded(obj){
 
 function favs(){
 
+    if(loggedin){
+        $("#content").fadeOut(250);
 
+        document.querySelector("#content").innerHTML = "Your favorite news stories go here.";
+        $("#favsButton").css('display', 'none');
+        $("#rssButton").css('display', 'block');
+
+        $("#content").fadeIn(1000);
+    }
 
 }
 
+function rssReset(){
 
-function addFav(){
+    init();
+    $("#favsButton").css('display', 'block');
+
+}
+
+function addFav(link, title, pubDate, parsedDate, origin){
+
+    console.log( link + title + pubDate );
+
+    var jsonObj = [];
+
+    item = {}
+
+    item["link"] = link;
+    item["title"] = title;
+    item["pubDate"] = pubDate;
+    item["parsedDate"] = parsedDate;
+    item["orign"] = origin;
+
+    console.log(item);
+
+    jsonObj.push(item);
 
 }
 
@@ -137,11 +178,15 @@ function loginSuccess(){
     $("#register").css('display', 'none');
     $("#login").css('display', 'none');
     $("#logged-in").css('display', 'block');
-
+    $("#favsButton").css('display', 'block');
+    loggedin = true;
+    init();
 }
 
 function logout(){
     notMember();
+    loggedin = false;
+    init();
 }
 
 function alreadyMember(){
@@ -157,5 +202,6 @@ function notMember(){
     $("#login").css('display', 'none');
     $("#register").css('display', 'block');
     $("#logged-in").css('display', 'none');
+    $("#favsButton").css('display', 'none');
 
 }
