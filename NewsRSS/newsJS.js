@@ -226,9 +226,13 @@ function loginSuccess(username){
     var info = localStorage.getItem(username);
     info = JSON.parse(info);
 
-    document.querySelector("#lastVisitText").innerHTML =
-        "Last Visit: <i>" + new Date(info.lastVisit).toUTCString() + "</i>";
-
+    if(info.lastVisit === 0 || info.lastVisit === "0") {
+        document.querySelector("#lastVisitText").innerHTML = "New User!";
+    }
+    else{
+        document.querySelector("#lastVisitText").innerHTML =
+            "Last Visit: <i>" + new Date(info.lastVisit).toUTCString() + "</i>";
+    }
     loggedin = true;
 
     info.lastVisit = Date.now();
