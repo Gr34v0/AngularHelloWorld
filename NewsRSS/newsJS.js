@@ -175,7 +175,7 @@ function login(){
         var username = document.getElementById('lg_username').value;
         var password = document.getElementById('lg_password').value;
 
-        if (localStorage.getItem(username) === password ){
+        if (JSON.parse(localStorage.getItem(username)).password === password ){
             document.getElementById("lgdin-username").innerHTML = username;
             loginSuccess(username);
         } else {
@@ -199,10 +199,14 @@ function register(){
         } else {
             console.log(username + " HERE");
 
-            if (localStorage.username === username + " " + password) {
+            if (localStorage.username) {
                 alert("Username " + username + " already taken. Sign in or choose a new name.");
             } else {
-                localStorage.setItem(username, password);
+
+                var userinfo = {"password" : password , "lastVisit" : 0 }
+                userinfo = JSON.stringify(userinfo);
+
+                localStorage.setItem(username, userinfo);
                 localStorage.setItem(username + "List", "[]");
                 alreadyMember();
             }
@@ -218,7 +222,17 @@ function loginSuccess(username){
     $("#login").css('display', 'none');
     $("#logged-in").css('display', 'block');
     $("#favsButton").css('display', 'block');
+
+    var info = localStorage.getItem(username);
+    info = JSON.parse(info);
+
+    document.querySelector("#lastVisitText").innerHTML =
+        "Last Visit: <i>" + new Date(info.lastVisit).toUTCString() + "</i>";
+
     loggedin = true;
+
+    info.lastVisit = Date.now();
+    localStorage.setItem(username, JSON.stringify(info));
     sessionStorage.setItem("user", username);
     init();
 }
