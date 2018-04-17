@@ -98,6 +98,10 @@ function favs(){
         $("#rssButton").css('display', 'block');
 
         $("#content").fadeIn(1000);
+
+
+        document.querySelector("#content").innerHTML = localStorage.getItem( sessionStorage.getItem("user")).toString();
+
     }
 
 }
@@ -111,21 +115,34 @@ function rssReset(){
 
 function addFav(link, title, pubDate, parsedDate, origin){
 
-    console.log( link + title + pubDate );
+    //console.log( link + title + pubDate );
 
-    var jsonObj = [];
+    //var jsonObj = [];
 
-    item = {}
+    //item = {};
 
-    item["link"] = link;
-    item["title"] = title;
-    item["pubDate"] = pubDate;
-    item["parsedDate"] = parsedDate;
-    item["orign"] = origin;
+    var username = sessionStorage.getItem("user");
+
+    //var favsList = [];
+
+    var favsList = localStorage.getItem(username);
+
+    favsList = JSON.parse(favsList);
+
+    console.log(favsList);
+
+    var item = { "link" : link, "title" : title, "pubDate" : pubDate, "parsedDate" : parsedDate, "origin" : origin };
 
     console.log(item);
 
-    jsonObj.push(item);
+    favsList.push(item);
+
+    console.log(favsList);
+
+    localStorage.setItem(username, JSON.stringify(favsList));
+
+    console.log(localStorage.getItem(username).toString());
+
 
 }
 
@@ -139,7 +156,7 @@ function login(){
 
         if (localStorage.username ===  username + " " + password) {
             document.getElementById("lgdin-username").innerHTML = username;
-            loginSuccess();
+            loginSuccess(username + " " + password);
         } else {
             alert("Username is not registered");
         }
@@ -165,6 +182,8 @@ function register(){
                 alert("Username " + username + " already taken. Sign in or choose a new name.");
             } else {
                 localStorage.username = username + " " + password;
+                var usrnmpsswd = username + " " + password;
+                localStorage.setItem(usrnmpsswd, "[]");
                 alreadyMember();
             }
         }
@@ -174,18 +193,20 @@ function register(){
     }
 }
 
-function loginSuccess(){
+function loginSuccess(username){
     $("#register").css('display', 'none');
     $("#login").css('display', 'none');
     $("#logged-in").css('display', 'block');
     $("#favsButton").css('display', 'block');
     loggedin = true;
+    sessionStorage.setItem("user", username);
     init();
 }
 
 function logout(){
     notMember();
     loggedin = false;
+    sessionStorage.removeItem("user");
     init();
 }
 
