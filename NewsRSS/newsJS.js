@@ -75,13 +75,17 @@ function xmlLoaded(obj){
         line += "</p></div>";
 
         html += line;
+
     }
 
-    //console.log(html);
-
-    //date sorting ... Date.parse( pubDate HERE );
 
     document.querySelector("#content").innerHTML += html;
+
+    var $items = $('.content');
+
+    $items.find('.item').sort(function (a, b) {
+       return +b.dataset.newsdate - +a.dataset.newsdate;
+    }).appendTo($items);
 
     $("#content").fadeIn(1000);
 

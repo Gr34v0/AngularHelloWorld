@@ -8,8 +8,9 @@
 ### Functional
  * <s>All information should be shown in a single aggregate news list</s>
  * <s>The user should be able to decide to show only certain news feeds. This should be done in real time.</s>
- * The user should be able to 'favorite' stories. They should be able to see a list of their favorite stories and remove them from the list.
- * The single page application should be aesthetically pleasing, clean and easy to use.
+ * <s>The user should be able to 'favorite' stories. They should be able to see a list of their favorite stories</s>
+ * The user should be able to remove Favorites from the list.
+ * <s>The single page application should be aesthetically pleasing, clean and easy to use.</s>
  * <s>Data storage should be done in a local XML/JSon file. Relational SQL and MongoDB are not allowed. You also may not use .csv, or flatfiles.</s>
  * You must ensure that your application has proper [responsive design](http://www.w3schools.com/html/html_responsive.asp). I will be using several recent browsers and mobile devices to test your site.
  * <s>User's should be able to create new accounts. This means that someone should be able to visit the page, and select that they want to create a new user. They should create a new username and password. Security is not an issue here, so don't worry about storing user names/passwords in XML/JSON. You do not need any forgot password reminders.</s>
