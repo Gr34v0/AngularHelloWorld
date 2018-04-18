@@ -16,7 +16,7 @@
  * <s>User's should be able to create new accounts. This means that someone should be able to visit the page, and select that they want to create a new user. They should create a new username and password. Security is not an issue here, so don't worry about storing user names/passwords in XML/JSON. You do not need any forgot password reminders.</s>
  * <s>Use cookies/HTML5 to remember the last time a user visited the page. This information should be shown on the main page ("Your last visit was on mm-dd-yyyy HH:mm:ss")</s>
  * <s>Optimally, the site should use AJAX to eliminate the need for refreshing the page. All information should be shown in real time.</s>
- * The most current items should be shown at the top of the page. As you scroll down the page, the items should get older (think how Twitter shows tweets.)
+ * <s>The most current items should be shown at the top of the page. As you scroll down the page, the items should get older (think how Twitter shows tweets.)</s>
 
 ### Non-Functional
  * <s>You must use RSS to collect your data.</s>
